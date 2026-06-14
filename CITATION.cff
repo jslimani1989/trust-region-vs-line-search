@@ -1,0 +1,106 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+type: software
+
+title: "Trust-Region vs Line Search: A Fair-Cost Unconstrained Optimization Benchmark"
+version: "0.1"
+date-released: "2026-06-01"
+
+abstract: >
+  Reproducible benchmark comparing three trust-region subproblem solvers
+  (Cauchy Point, Dogleg, Steihaug-Toint CG) against three line-search
+  methods (BFGS-Armijo, BFGS-Wolfe, Newton with backtracking) on 180
+  unconstrained optimization instances spanning ill-conditioning,
+  non-convexity, and indefinite Hessians. All solvers share a uniform
+  oracle budget; Hessian evaluations are tracked separately for equitable
+  comparison. Includes unit tests, data profiles (Moré & Wild 2009),
+  and a LaTeX article skeleton.
+
+authors:
+  - family-names: "TODO"
+    given-names: "TODO"
+    affiliation: >
+      Institut National de Statistique et d'Économie Appliquée (INSEA),
+      Rabat, Morocco
+    email: "TODO@insea.ac.ma"
+    orcid: "https://orcid.org/TODO"
+
+repository-code: "https://github.com/TODO/trust-region-vs-line-search"
+url: "https://github.com/TODO/trust-region-vs-line-search"
+license: MIT
+
+keywords:
+  - trust-region methods
+  - line search
+  - unconstrained optimization
+  - Steihaug-Toint CG
+  - benchmark
+  - performance profiles
+  - data profiles
+  - numerical optimization
+
+references:
+  - type: article
+    title: "The conjugate gradient method and trust regions in large scale optimization"
+    authors:
+      - family-names: "Steihaug"
+        given-names: "Trond"
+    journal: "SIAM Journal on Numerical Analysis"
+    volume: 20
+    issue: 3
+    pages: "626-637"
+    year: 1983
+    doi: "10.1137/0720042"
+
+  - type: article
+    title: "Benchmarking optimization software with performance profiles"
+    authors:
+      - family-names: "Dolan"
+        given-names: "Elizabeth D."
+      - family-names: "Moré"
+        given-names: "Jorge J."
+    journal: "Mathematical Programming"
+    volume: 91
+    issue: 2
+    pages: "201-213"
+    year: 2002
+    doi: "10.1007/s101070100263"
+
+  - type: article
+    title: "Benchmarking derivative-free optimization algorithms"
+    authors:
+      - family-names: "Moré"
+        given-names: "Jorge J."
+      - family-names: "Wild"
+        given-names: "Stefan M."
+    journal: "SIAM Journal on Optimization"
+    volume: 20
+    issue: 1
+    pages: "172-191"
+    year: 2009
+    doi: "10.1137/080724083"
+
+  - type: book
+    title: "Trust-Region Methods"
+    authors:
+      - family-names: "Conn"
+        given-names: "Andrew R."
+      - family-names: "Gould"
+        given-names: "Nicholas I. M."
+      - family-names: "Toint"
+        given-names: "Philippe L."
+    publisher: "Society for Industrial and Applied Mathematics"
+    year: 2000
+    doi: "10.1137/1.9780898719857"
+
+  - type: book
+    title: "Numerical Optimization"
+    edition: "2nd"
+    authors:
+      - family-names: "Nocedal"
+        given-names: "Jorge"
+      - family-names: "Wright"
+        given-names: "Stephen J."
+    publisher: "Springer"
+    year: 2006
+    doi: "10.1007/978-0-387-40065-5"

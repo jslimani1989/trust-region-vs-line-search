@@ -1,0 +1,449 @@
+% ============================================================
+%  article_conference.tex
+%  Trust-Region vs Line Search — Squelette article conférence
+%  Cible : ROADEF 2027 (4-6 p.) ou IFIP TC7 (10-15 p.)
+%  Adapter \documentclass selon la venue retenue.
+%  Langue : anglais — travail en français.
+%
+%  Structure (stratégie v2, Section 2.2) :
+%    §1  Introduction              (~1 p.)
+%    §2  Methods & Protocol        (~1.5 p.)
+%    §3  Conditioning Experiment   (~1.5 p.)  ← BLOQUANT G3
+%    §4  Per-Category Robustness   (~1.5 p.)
+%    §5  Cost & Scalability        (~1 p.)
+%    §6  Decision Rule             (~0.75 p.)
+%    §7  Theoretical Elements      (~0.75 p.)
+%    §8  Conclusion                (~0.5 p.)
+%
+%  Commandes TODO :
+%    \TODO{texte}   — bloc à rédiger
+%    \FIG{label}    — placeholder figure
+%    \TAB{label}    — placeholder tableau
+% ============================================================
+
+% ── Classe de document ──────────────────────────────────────
+% ROADEF : remplacer par le template officiel quand disponible
+% IFIP TC7 : \documentclass{llncs}  (Springer LNCS)
+\documentclass[11pt,a4paper]{article}
+
+% ── Packages ────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}           % \coloneqq, etc.
+\usepackage{booktabs}            % \toprule, \midrule, \bottomrule
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{microtype}
+\usepackage{natbib}              % \citep, \citet
+\usepackage{xspace}
+\usepackage{soul}                % \hl{...} pour les TODOs visibles
+
+% ── Commandes utilitaires ────────────────────────────────────
+\newcommand{\TODO}[1]{\textcolor{red}{\textbf{[TODO:} \textit{#1}\textbf{]}}}
+\newcommand{\FIG}[1]{%
+  \begin{center}
+    \fbox{\rule{0pt}{3.5cm}\rule{0.85\linewidth}{0pt}}\\[2pt]
+    {\small\textit{[Figure placeholder: #1]}}
+  \end{center}}
+\newcommand{\TAB}[1]{%
+  \begin{center}
+    \fbox{\parbox{0.85\linewidth}{\centering\vspace{1.2em}
+      \small\textit{[Table placeholder: #1]}\vspace{1.2em}}}
+  \end{center}}
+
+% ── Notations ───────────────────────────────────────────────
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\Ntot}{N_{\mathrm{tot}}}
+\newcommand{\Kmax}{K_{\max}}
+\newcommand{\mk}{m_k}
+\newcommand{\gk}{g_k}
+\newcommand{\Bk}{B_k}
+\newcommand{\xk}{x_k}
+\newcommand{\dk}{\Delta_k}
+
+% Abréviations méthodes
+\newcommand{\SteihaugCG}{Steihaug-CG\xspace}
+\newcommand{\NewtonBT}{Newton-BT\xspace}
+\newcommand{\BFGSW}{BFGS-Wolfe\xspace}
+\newcommand{\BFGSA}{BFGS-Armijo\xspace}
+
+% ============================================================
+\begin{document}
+% ============================================================
+
+% ── Titre ───────────────────────────────────────────────────
+\title{%
+  Trust-Region vs Line Search for Unconstrained Optimization:\\
+  A Fair-Cost Benchmark on Ill-Conditioned, Non-Convex,\\
+  and Indefinite-Hessian Problems%
+  \thanks{Code and data: \url{https://github.com/TODO/trust-region-vs-linesearch}
+          (tag \texttt{v0.1}).}}
+
+\author{%
+  \TODO{Prénom Nom}\\
+  Institut National de Statistique et d'Économie Appliquée (INSEA),
+  Rabat, Morocco\\
+  \texttt{\TODO{email@insea.ac.ma}}}
+
+\date{\TODO{date soumission}}
+\maketitle
+
+% ── Abstract ────────────────────────────────────────────────
+\begin{abstract}
+% Source : stratégie v2, Section 1.3 (abstract proposé).
+% À valider/ajuster après G3 (figure pivot κ).
+We present a controlled, fair-cost comparison of three trust-region
+subproblem solvers (Cauchy point, dogleg, Steihaug--Toint truncated CG)
+against three line-search methods (BFGS-Armijo, BFGS-Wolfe, Newton with
+backtracking) on 180 unconstrained instances spanning ill-conditioning
+($\kappa \in \{10^2, 10^3, 10^4, 10^5\}$), non-convexity, and indefinite
+Hessians, with the Hessian-evaluation count separated from the $f/\nabla
+f$ budget so that all methods are charged on a common oracle cost
+$\Ntot = N_f + N_g + N_h$.
+We show that the trust-region family does not dominate line search
+globally, and that the operative variable is problem structure rather than
+algorithm family.
+The \SteihaugCG step emerges as the unique Pareto-efficient choice across
+the robustness--scalability plane: it ties the best success rate on
+ill-conditioned problems (82.7\%), achieves the best absolute robustness
+on non-convex instances (89.1\%), and is the only method preserving a
+viable iteration/CPU trade-off from $n=10$ to $n=1000$
+($\mathcal{O}(n^2)$ per iteration).
+On indefinite Hessians the determining factor is the safeguard mechanism,
+not the algorithm family.
+We synthesise these findings into a statistically validated decision rule.
+
+\medskip
+\noindent\textbf{Keywords:} trust-region methods, line search, unconstrained
+optimization, performance profiles, scalability, Steihaug--Toint CG.
+\end{abstract}
+
+% ============================================================
+\section{Introduction}
+\label{sec:intro}
+% Matériau : Section 1 du rapport, à réécrire en anglais, resserré.
+% Objectif : 1 page, question praticien + contributions + headline chiffré.
+% ============================================================
+
+\TODO{%
+  Motivation : unconstrained optimization in ML, simulation, calibration.
+  Two philosophies : trust-region (simultaneous direction + step via
+  $\min_{\norm{p}\le\dk} \mk(p)$) vs line search (decouple direction and step).
+  Theoretical guarantees comparable --- practical behavior diverges.
+  Central question: for which problem structures does each family excel?
+}
+
+\TODO{%
+  Headline figure : Steihaug-CG 82.7\% on Cat.~A, 89.1\% on Cat.~B;
+  Newton-BT 76\% on Cat.~C; global averages TR 62.6\% vs LS 65.7\%
+  (no global dominance).
+}
+
+\paragraph{Contributions.}
+\begin{enumerate}
+  \item A complete, from-scratch implementation of six second-order methods
+        with a common oracle-cost framework separating $N_f$, $N_g$, $N_h$.
+  \item A structured benchmark of 180 instances in three difficulty
+        categories (ill-conditioning, non-convexity, indefinite Hessian)
+        across dimensions $n \in \{10, 50, 100, 500, 1000\}$.
+  \item \TODO{Quantified $\kappa$-resolved experiment (§\ref{sec:cond})
+        --- fill after G3.}
+  \item A statistically validated decision rule synthesising all findings
+        (§\ref{sec:rule}).
+\end{enumerate}
+
+% ============================================================
+\section{Methods and Experimental Protocol}
+\label{sec:methods}
+% Matériau : §§3--4 du rapport.
+% Objectif : 1.5 pages, tableau compact 6 méthodes, protocole budget unifié.
+% ============================================================
+
+\subsection{Trust-Region Methods}
+
+At iteration $k$, solve the subproblem
+$\min_{\norm{p} \le \dk} \mk(p)$
+where $\mk(p) = f_k + \gk^\top p + \tfrac{1}{2} p^\top \Bk p$.
+The trust-region radius $\dk$ is updated via the ratio
+$\rho_k = \mathrm{ared}_k / \mathrm{pred}_k$
+with thresholds $\eta_1 = 0.1$, $\eta_2 = 0.75$.
+Three subproblem solvers are compared:
+
+\begin{description}
+  \item[Cauchy Point (CP).] Minimizes $\mk$ along $-\gk$;
+        $\tau^* = \min(1, \norm{\gk}^3 / (\gk^\top\Bk\gk \cdot \dk))$.
+  \item[Dogleg.] Interpolates the Cauchy direction $p^U$ and the Newton
+        step $p^N = -\Bk^{-1}\gk$ (Cholesky; fallback to CP if $\Bk \not\succ 0$).
+  \item[\SteihaugCG.] Truncated CG solving $\Bk p = -\gk$; stops on
+        negative curvature ($d^\top\Bk d \le 0$), boundary, or
+        Eisenstat--Walker tolerance \citep{Steihaug83}.
+\end{description}
+
+\subsection{Line-Search Methods}
+
+\TODO{BFGS-Armijo, BFGS-Wolfe (zoom + cubic interpolation), Newton-BT
+(fallback $-g_k$ when $H_k$ singular; §\ref{sec:cat_c} discusses the
+implication for Cat.~C).}
+
+\subsection{Common Protocol}
+
+\TAB{Table: 6 methods --- compact parameter table.
+Rows: method name, line/TR, Kmax=1000 (uniform, G8), tol=1e-6,
+oracle cost Ntot=Nf+Ng+Nh.}
+
+\paragraph{Oracle-cost budget (G8).}
+A uniform iteration budget $\Kmax = 1000$ is applied to all six solvers.
+The total oracle cost $\Ntot = N_f + N_g + N_h$ is tracked separately for
+each method; methods that never call the Hessian oracle (BFGS variants)
+naturally incur $N_h = 0$, making comparisons equitable.
+Performance is reported via Dolan--Moré performance profiles
+\citep{DolanMore2002} and data profiles \citep{MoreWild2009}.
+
+\subsection{Benchmark Structure}
+
+\TAB{Table: benchmark --- 3 categories × 5 dimensions × nb problems
+= 180 instances. Cat.~A: quadratics with $\kappa \in \{10^2,...,10^5\}$,
+Rosenbrock, Wood, Dixon-Price; Cat.~B: non-convex (Rastrigin, Ackley,
+CUTEst BROYDN3D, CHAINWOO, ...); Cat.~C: indefinite Hessian at $x^*$.}
+
+% ============================================================
+\section{The Conditioning Experiment: Central Result}
+\label{sec:cond}
+% *** BLOQUANT G3 ***
+% Matériau : À produire (gap G3).
+% Objectif : 1.5 pages, Figure 1 pivot + narration centrale.
+% Milestone : Steihaug ≈ constant sur κ ∈ [1e2,1e5], BFGS croissant.
+%             Si découplage absent → pause + rediscussion du récit.
+% ============================================================
+
+\TODO{%
+  SECTION BLOQUANTE --- attend gap G3 (figure itérations médianes vs $\kappa$).\\
+  Structure prévue :\\
+  (i)  Experimental design: Cat.~A quadratics at fixed $n$,
+       $\kappa \in \{10^2, 10^3, 10^4, 10^5\}$ varied.\\
+  (ii) Figure~\ref{fig:kappa}: median iterations vs $\kappa$ for
+       Steihaug-CG, Dogleg, BFGS-Armijo, BFGS-Wolfe.\\
+  (iii) Companion panel: vs $n$ at fixed $\kappa$.\\
+  (iv) Wilcoxon signed-rank test: Steihaug vs BFGS-Armijo intra-Cat.~A
+       (optional at conference stage, full stats for journal).\\
+  Expected finding: Steihaug median iterations $\approx 21$ regardless
+  of $\kappa$; BFGS-Armijo rises from $\sim$20 to $\sim$200 as
+  $\kappa: 10^2 \to 10^5$.
+}
+
+\begin{figure}[htbp]
+  \centering
+  \FIG{fig:kappa --- PIVOT FIGURE (G3). Left panel: median iterations
+       vs $\kappa$ at fixed $n$. Right panel: vs $n$ at fixed $\kappa$.
+       4 methods: Steihaug-CG (flat), Dogleg (flat), BFGS-Armijo
+       (rising), BFGS-Wolfe (rising).}
+  \caption{Median iterations as a function of conditioning $\kappa$
+    (left) and dimension $n$ (right) on Category~A problems.
+    \SteihaugCG and Dogleg maintain a near-constant iteration count
+    while BFGS variants degrade with $\kappa$.
+    \TODO{Fill after G3.}}
+  \label{fig:kappa}
+\end{figure}
+
+\TODO{Explain the mechanism: TR methods adapt $\dk$ to local curvature
+independently of $\kappa$; BFGS accumulates curvature information
+progressively and degrades on highly elongated landscapes.
+Theoretical backing: CG convergence rate $1 - 1/\kappa$ \citep[Ch.~5]{NW06};
+Cauchy bound $\tfrac{1}{2}\norm{\gk}\min(\dk, \norm{\gk}/\norm{\Bk})$
+\citep[Ch.~4]{CGT00}.}
+
+% ============================================================
+\section{Per-Category Robustness}
+\label{sec:robustness}
+% Matériau : §§5.2 + 5.4 du rapport, mis à jour post-G1 (Newton-LM).
+% Objectif : 1.5 pages.
+% ============================================================
+
+\TAB{Table: success rates (\%) by category and method.
+Rows: 6 methods. Columns: Cat.~A, Cat.~B, Cat.~C, Global.
+(Values from rapport Table 5 --- update after re-run v2.)}
+
+\paragraph{Category~A (ill-conditioned).}
+\TODO{Dogleg and Steihaug-CG dominate (82.7\%) vs BFGS (62--68\%).
+Cauchy Point collapses (10.7\%): steepest-descent direction is
+ineffective in elongated valleys.
+Reference Fig.~\ref{fig:kappa}.}
+
+\paragraph{Category~B (non-convex).}
+\TODO{\SteihaugCG achieves 89.1\%, best absolute score, due to negative
+curvature detection ($d^\top\Bk d \le 0$ exit with boundary projection).
+BFGS-Armijo competitive at 74.5\%.}
+
+\paragraph{Category~C (indefinite Hessian).}
+\label{sec:cat_c}
+\TODO{The operative variable is the \emph{safeguard mechanism}, not the
+algorithm family (Q1-acté finding).
+Newton-BT survives at 76\% via its $-g_k$ fallback (ad-hoc safeguard).
+BFGS-Wolfe collapses at 26\% (26 numerical exceptions, no safeguard).
+\SteihaugCG reaches 58\% without code modification via its
+$d^\top\Bk d \le 0$ criterion.
+\textbf{G1 note:} after Newton-LM regularisation, Newton-BT Cat.~C
+results should be updated here.}
+
+\paragraph{Performance and data profiles.}
+
+\begin{figure}[htbp]
+  \centering
+  \FIG{fig:profiles --- Dolan-Moré performance profiles (3 panels,
+       one per category) + data profiles (Moré \& Wild 2009).
+       Matériau : rapport Figs 6--8 (Dolan-Moré) + data\_profiles\_phase0.pdf (G8).}
+  \caption{Performance profiles (Dolan--Moré) and data profiles
+    (Moré--Wild) per category.
+    \TODO{Insert after re-run v2 and data profiles script (G8).}}
+  \label{fig:profiles}
+\end{figure}
+
+% ============================================================
+\section{Cost and Scalability}
+\label{sec:scalability}
+% Matériau : §§5.3 + 5.5 du rapport.
+% Objectif : 1 page.
+% ============================================================
+
+\paragraph{Oracle cost vs dimension.}
+\TODO{Fig: $\Ntot$/CPU vs $n$ for 3 categories.
+Newton-BT: $\mathcal{O}(n^3)$ per iteration, prohibitive at $n=1000$.
+\SteihaugCG: $\mathcal{O}(n^2)$ per iteration, stable cost.
+Message: Steihaug is the only method maintaining a reasonable
+iteration/CPU trade-off from $n=10$ to $n=1000$.}
+
+\begin{figure}[htbp]
+  \centering
+  \FIG{fig:scalability --- $\Ntot$ median (left) and CPU (right) vs $n$.
+       Matériau : rapport Fig.~5 (updated post-v2).}
+  \caption{Median oracle cost $\Ntot$ and CPU time as a function of $n$.
+    \TODO{Fill after re-run v2.}}
+  \label{fig:scalability}
+\end{figure}
+
+\paragraph{Rosenbrock case study.}
+
+\TAB{Table: Rosenbrock $n=10$, $x_0=(-1.2,1,\ldots)^\top$.
+3 methods: Steihaug-CG, BFGS-Wolfe, Newton-BT.
+Columns: iterations, $\norm{\nabla f}_{\mathrm{final}}$, $\#f$, $\#\nabla f$.
+(Rapport Table 6.)}
+
+\TODO{Steihaug-CG: 39 iterations, 77 $f$-evals --- best cost/accuracy.
+Newton-BT: 291 iterations, 2602 $f$-evals (frequent backtracking rejections).}
+
+% ============================================================
+\section{Decision Rule}
+\label{sec:rule}
+% Matériau : §7.2 du rapport, formalisé en arbre if/then.
+% Objectif : 0.75 page --- À produire (gap G2).
+% ============================================================
+
+\TODO{%
+  Figure: decision tree with 4 nodes:\\
+  (1) Is $\nabla^2 f$ available?\\
+  (2) Is $H$ potentially indefinite?\\
+  (3) Is $\kappa$ large (ill-conditioned)?\\
+  (4) Is $n$ large ($\ge 500$)?\\
+  Leaves: Steihaug-CG, Dogleg, Newton-BT (small $n$), BFGS-Armijo.\\
+  At conference stage: qualitative (no statistical test).\\
+  At journal stage: backed by Wilcoxon signed-rank + Holm correction (G7).
+}
+
+\begin{figure}[htbp]
+  \centering
+  \FIG{fig:decision-tree --- if/then tree (4 nodes, 4-5 leaves).
+       Gap G2.}
+  \caption{Recommended solver selection rule based on problem structure.
+    \TODO{Produce after G2.}}
+  \label{fig:decision}
+\end{figure}
+
+% ============================================================
+\section{Theoretical Elements}
+\label{sec:theory}
+% Matériau : §6 du rapport.
+% Objectif : 0.75 page --- esquisse des preuves.
+% ============================================================
+
+\subsection{Cauchy Point Bound}
+
+\begin{proposition}[Sufficient reduction, \citealt{CGT00}]
+\label{prop:cauchy}
+The Cauchy step $p^C_k$ satisfies
+\begin{equation}
+  \mk(0) - \mk(p^C_k)
+  \;\ge\;
+  \tfrac{1}{2}\norm{\gk}
+  \min\!\left(\dk,\,\frac{\norm{\gk}}{\norm{\Bk}}\right).
+  \label{eq:cauchy_bound}
+\end{equation}
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+\TODO{Two cases: $\gk^\top\Bk\gk \le 0$ and $> 0$.
+Case 1 ($\gk^\top\Bk\gk \le 0$): $\alpha = \dk/\norm{\gk}$,
+reduction $= \dk\norm{\gk} \ge \tfrac{1}{2}\norm{\gk}\dk$. $\checkmark$\\
+Case 2 ($\gk^\top\Bk\gk > 0$): $\alpha^* = \norm{\gk}^2/(\gk^\top\Bk\gk)$;
+distinguish $\alpha^* \le \dk/\norm{\gk}$ vs $> \dk/\norm{\gk}$;
+assemble the two bounds. $\checkmark$}
+\end{proof}
+
+\subsection{Global Convergence}
+
+\begin{theorem}[Global convergence, \citealt{CGT00}]
+If $f \in C^2(\R^n)$ is bounded below and $\norm{\Bk}$ is bounded, then any
+algorithm ensuring reduction \eqref{eq:cauchy_bound} satisfies
+$\liminf_{k\to\infty} \norm{\nabla f(\xk)} = 0$.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+\TODO{By contradiction: if $\norm{\gk} \ge \varepsilon > 0$, then
+$\mathrm{pred}_k \ge c\varepsilon^2 > 0$.
+For $\dk$ small, $\rho_k \to 1$ (Taylor; requires $\nabla f$
+$L$-Lipschitz), so $\mathrm{ared}_k \ge \eta_1\,\mathrm{pred}_k > 0$,
+$\sum_k \mathrm{ared}_k$ diverges, contradicting boundedness below.
+(Full argument with Lipschitz step: journal version, §7.)}
+\end{proof}
+
+\subsection{Asymptotic Rates}
+
+\TODO{CP: linear at rate $1-1/\kappa(\Bk)$ (explains 10.7\% Cat.~A).
+Dogleg/Steihaug with $\Bk = \nabla^2 f(\xk)$: superlinear.
+Newton-BT: quadratic local, $\norm{x_{k+1}-x^*} = \mathcal{O}(\norm{x_k-x^*}^2)$
+(explains 9 median iterations).}
+
+% ============================================================
+\section{Conclusion}
+\label{sec:conclusion}
+% Matériau : §8 du rapport.
+% Objectif : 0.5 page.
+% ============================================================
+
+\TODO{%
+  Summary per category (3 bullet points from rapport §8).\\
+  Main finding: Steihaug-CG is the unique Pareto-efficient solver across
+  the robustness-scalability plane (Q1-acté).\\
+  Cat.~C: safeguard mechanism, not family (Q1-acté).\\
+  Limitations: hand-reimplemented CUTEst problems (pycutest for journal);
+  no L-BFGS comparison (journal, G4); dense Hessians only (sparse: journal G5).\\
+  Perspectives: hybrid TR/quasi-Newton; L-BFGS extension; pycutest.
+}
+
+% ── Acknowledgements ────────────────────────────────────────
+\section*{Acknowledgements}
+\TODO{INSEA context --- à adapter.}
+
+% ── Bibliography ────────────────────────────────────────────
+\bibliographystyle{plainnat}
+\bibliography{references_conf}
+
+\end{document}
+
+% ============================================================
+% END OF article_conference.tex
+% ============================================================
