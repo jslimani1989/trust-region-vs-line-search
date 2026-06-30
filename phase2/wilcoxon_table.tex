@@ -1,0 +1,23 @@
+% Table §4 — Wilcoxon signed-rank + Holm correction
+% ★★ p_holm<0.01 · ★ p_holm<0.05 · ns not significant
+% ↓ method A better · ↑ method B better
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{l l c c c}
+\toprule
+ID & Pair & Cat.~A & Cat.~B & Cat.~C \\
+\midrule
+  P1 & Steihaug--CG vs Cauchy & 91 vs 4002 ★★$\downarrow$ & 51 vs 315 ★★$\downarrow$ & 2128 vs 4002 ★ \\
+  P2 & Steihaug--CG vs Dogleg & 91 vs 27 ★★$\uparrow$ & 51 vs 39 ns & 2128 vs 2128 ns \\
+  P3 & Steihaug--CG vs BFGS--Armijo & 91 vs 1788 ★★$\downarrow$ & 51 vs 165 ★★$\downarrow$ & 2128 vs 5002 ★★$\downarrow$ \\
+  P4 & Steihaug--CG vs BFGS--Wolfe & 91 vs 993 ★★$\downarrow$ & 51 vs 208 ★★$\downarrow$ & 2128 vs 146 ns$\downarrow$ \\
+  P5 & Steihaug--CG vs Newton--BT & 91 vs 10 ★★$\uparrow$ & 51 vs 28 ns$\uparrow$ & 2128 vs 146 ns$\downarrow$ \\
+  P6 & Dogleg vs Cauchy & 27 vs 4002 ★★$\downarrow$ & 39 vs 315 ★★ & 2128 vs 4002 ns \\
+  P7 & BFGS--Wolfe vs BFGS--Armijo & 993 vs 1788 ★$\downarrow$ & 208 vs 165 ★$\uparrow$ & 146 vs 5002 ns$\downarrow$ \\
+  P8 & BFGS--Wolfe vs Newton--BT & 993 vs 10 ★★$\uparrow$ & 208 vs 28 ★★$\uparrow$ & 146 vs 146 ns$\uparrow$ \\
+\bottomrule
+\end{tabular}
+\caption{Pairwise Wilcoxon signed-rank tests on $N_{\rm tot}$ (median over instances, Holm--Bonferroni correction, $\alpha=0.05$). $\downarrow$: first method uses fewer oracle evaluations.}
+\label{tab:wilcoxon}
+\end{table}
