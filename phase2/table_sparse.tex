@@ -1,0 +1,20 @@
+% Table §9.2 — Sparse Hessian illustration (B40, PLAN_S9_SPARSE.md)
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{l r r r r}
+\toprule
+Method & $n$ & CPU (s) & nnz(factor) & Fill ratio \\
+\midrule
+  Steihaug-CG & 500 & 0.0006 & 2494 & 1.00 \\
+  Newton-LM (sparse LU) & 500 & 0.0016 & 3000 & 1.20 \\
+  Newton-LM (dense) & 500 & 0.6651 & 125250 & 50.22 \\
+\addlinespace
+  Steihaug-CG & 5000 & 0.0024 & 24994 & 1.00 \\
+  Newton-LM (sparse LU) & 5000 & 0.0031 & 30000 & 1.20 \\
+  Newton-LM (dense) & 5000 & 7.0737 & 12502500 & 500.22 \\
+\bottomrule
+\end{tabular}
+\caption{Sparse Hessian illustration: pentadiagonal SPD quadratic, bandwidth $b=2$, $\mathrm{nnz}(A) = O(n)$. Steihaug--CG accesses $A$ only through matrix--vector products and never factorizes it (fill ratio $=1$ by construction); Newton-type methods incur fill-in that grows with $n$ regardless of fill-reducing ordering.}
+\label{tab:sparse}
+\end{table}
