@@ -1,0 +1,109 @@
+problem,name,category,method,n,status,converged,n_iter,n_f_evals,n_g_evals,n_h_evals,n_total,budget_ratio,cpu_s,f_final,f_error,grad_norm,error_msg
+A08,BEALE (CUTEst n=2),A,Cauchy_Point,2,success,True,874,1749,875,875,3499,1.166333,0.04127781200077152,9.09944023966217e-13,9.09944023966217e-13,9.801921362464233e-07,
+A08,BEALE (CUTEst n=2),A,Dogleg,2,success,True,8,17,9,9,35,0.011667,0.0009614959999453276,5.739846494859968e-16,5.739846494859968e-16,9.063311673545056e-08,
+A08,BEALE (CUTEst n=2),A,Steihaug_CG,2,success,True,11,23,12,12,47,0.015667,0.0010303230010322295,8.640083876082166e-16,8.640083876082166e-16,3.931261321169541e-08,
+A08,BEALE (CUTEst n=2),A,BFGS_Armijo,2,success,True,16,55,31,0,86,0.028667,0.0010414630014565773,6.08729379781642e-18,6.08729379781642e-18,5.157399645817035e-09,
+A08,BEALE (CUTEst n=2),A,BFGS_Wolfe,2,success,True,15,79,113,0,192,0.064,0.001954879997356329,9.244056077930543e-14,9.244056077930543e-14,5.646261036246435e-07,
+A08,BEALE (CUTEst n=2),A,Newton_BT,2,success,True,12,38,23,12,73,0.024333,0.0009741069952724501,4.603183624715063e-17,4.603183624715063e-17,6.536116411194604e-08,
+A11,FREUROTH (CUTEst n=2),A,Cauchy_Point,2,max_iter_or_not_converged,False,1000,2001,1001,1000,4002,1.334,0.05595131999871228,49.06377354060844,49.06377354060844,0.6357227420435111,
+A11,FREUROTH (CUTEst n=2),A,Dogleg,2,success,True,8,17,9,9,35,0.011667,0.0011389209976186976,48.984253679239984,48.984253679239984,5.033968688841349e-12,
+A11,FREUROTH (CUTEst n=2),A,Steihaug_CG,2,success,True,14,29,15,15,59,0.019667,0.0010884529983741231,48.984253679240005,48.984253679240005,2.8647189831560477e-09,
+A11,FREUROTH (CUTEst n=2),A,BFGS_Armijo,2,success,True,12,45,23,0,68,0.022667,0.0007669270053156652,48.98425367924003,48.98425367924003,1.0975531313914078e-08,
+A11,FREUROTH (CUTEst n=2),A,BFGS_Wolfe,2,success,True,10,90,150,0,240,0.08,0.001931243998114951,2.8203126474650994e-17,2.8203126474650994e-17,5.098167196286631e-08,
+A11,FREUROTH (CUTEst n=2),A,Newton_BT,2,success,True,8,23,15,8,46,0.015333,0.0005111889986437745,48.98425367924001,48.98425367924001,1.7067822212573437e-13,
+A06,WOODS,A,Cauchy_Point,4,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 1
+A06,WOODS,A,Dogleg,4,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 1
+A06,WOODS,A,Steihaug_CG,4,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 1
+A06,WOODS,A,BFGS_Armijo,4,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 1
+A06,WOODS,A,BFGS_Wolfe,4,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 1
+A06,WOODS,A,Newton_BT,4,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 1
+B6_Broydn3D,BROYDN3D (CUTEst n=10),B,Cauchy_Point,10,exception,False,0,1,1,1,3,,0.00017924699932336807,,,,"AssertionError: CUTEstProblem.hess: v must be specified for constrained problems. For the objective Hessian, use problem.ihess(x)"
+B6_Broydn3D,BROYDN3D (CUTEst n=10),B,Dogleg,10,exception,False,0,1,1,1,3,,9.794400102691725e-05,,,,"AssertionError: CUTEstProblem.hess: v must be specified for constrained problems. For the objective Hessian, use problem.ihess(x)"
+B6_Broydn3D,BROYDN3D (CUTEst n=10),B,Steihaug_CG,10,exception,False,0,1,1,1,3,,8.628099749330431e-05,,,,"AssertionError: CUTEstProblem.hess: v must be specified for constrained problems. For the objective Hessian, use problem.ihess(x)"
+B6_Broydn3D,BROYDN3D (CUTEst n=10),B,BFGS_Armijo,10,success,True,1,2,1,0,3,0.000273,0.0001765769993653521,0.0,0.0,0.0,
+B6_Broydn3D,BROYDN3D (CUTEst n=10),B,BFGS_Wolfe,10,success,True,1,2,1,0,3,0.000273,0.00012241300282767043,0.0,0.0,0.0,
+B6_Broydn3D,BROYDN3D (CUTEst n=10),B,Newton_BT,10,exception,False,0,0,1,1,2,,8.446199353784323e-05,,,,"AssertionError: CUTEstProblem.hess: v must be specified for constrained problems. For the objective Hessian, use problem.ihess(x)"
+B6_Broydn3D,BROYDN3D (CUTEst n=50),B,Cauchy_Point,50,exception,False,0,1,1,1,3,,0.00019799000438069925,,,,"AssertionError: CUTEstProblem.hess: v must be specified for constrained problems. For the objective Hessian, use problem.ihess(x)"
+B6_Broydn3D,BROYDN3D (CUTEst n=50),B,Dogleg,50,exception,False,0,1,1,1,3,,0.00010022799688158557,,,,"AssertionError: CUTEstProblem.hess: v must be specified for constrained problems. For the objective Hessian, use problem.ihess(x)"
+B6_Broydn3D,BROYDN3D (CUTEst n=50),B,Steihaug_CG,50,exception,False,0,1,1,1,3,,0.00011981600255239755,,,,"AssertionError: CUTEstProblem.hess: v must be specified for constrained problems. For the objective Hessian, use problem.ihess(x)"
+B6_Broydn3D,BROYDN3D (CUTEst n=50),B,BFGS_Armijo,50,success,True,1,2,1,0,3,5.9e-05,0.00021517400455195457,0.0,0.0,0.0,
+B6_Broydn3D,BROYDN3D (CUTEst n=50),B,BFGS_Wolfe,50,success,True,1,2,1,0,3,5.9e-05,0.0001203479987452738,0.0,0.0,0.0,
+B6_Broydn3D,BROYDN3D (CUTEst n=50),B,Newton_BT,50,exception,False,0,0,1,1,2,,0.00025507000100333244,,,,"AssertionError: CUTEstProblem.hess: v must be specified for constrained problems. For the objective Hessian, use problem.ihess(x)"
+B6_Broydn3D,BROYDN3D (CUTEst n=100),B,Cauchy_Point,100,exception,False,0,1,1,1,3,,0.0002646770008141175,,,,"AssertionError: CUTEstProblem.hess: v must be specified for constrained problems. For the objective Hessian, use problem.ihess(x)"
+B6_Broydn3D,BROYDN3D (CUTEst n=100),B,Dogleg,100,exception,False,0,1,1,1,3,,0.0004241959977662191,,,,"AssertionError: CUTEstProblem.hess: v must be specified for constrained problems. For the objective Hessian, use problem.ihess(x)"
+B6_Broydn3D,BROYDN3D (CUTEst n=100),B,Steihaug_CG,100,exception,False,0,1,1,1,3,,0.00011587900371523574,,,,"AssertionError: CUTEstProblem.hess: v must be specified for constrained problems. For the objective Hessian, use problem.ihess(x)"
+B6_Broydn3D,BROYDN3D (CUTEst n=100),B,BFGS_Armijo,100,success,True,1,2,1,0,3,3e-05,0.0008996319957077503,0.0,0.0,0.0,
+B6_Broydn3D,BROYDN3D (CUTEst n=100),B,BFGS_Wolfe,100,success,True,1,2,1,0,3,3e-05,0.00021284400281729177,0.0,0.0,0.0,
+B6_Broydn3D,BROYDN3D (CUTEst n=100),B,Newton_BT,100,exception,False,0,0,1,1,2,,0.00012464100291254,,,,"AssertionError: CUTEstProblem.hess: v must be specified for constrained problems. For the objective Hessian, use problem.ihess(x)"
+B6_Broydn3D,BROYDN3D (CUTEst n=500),B,Cauchy_Point,500,exception,False,0,1,1,1,3,,0.00032891299633774906,,,,"AssertionError: CUTEstProblem.hess: v must be specified for constrained problems. For the objective Hessian, use problem.ihess(x)"
+B6_Broydn3D,BROYDN3D (CUTEst n=500),B,Dogleg,500,exception,False,0,1,1,1,3,,0.00017497599765192717,,,,"AssertionError: CUTEstProblem.hess: v must be specified for constrained problems. For the objective Hessian, use problem.ihess(x)"
+B6_Broydn3D,BROYDN3D (CUTEst n=500),B,Steihaug_CG,500,exception,False,0,1,1,1,3,,0.00019564599642762914,,,,"AssertionError: CUTEstProblem.hess: v must be specified for constrained problems. For the objective Hessian, use problem.ihess(x)"
+B6_Broydn3D,BROYDN3D (CUTEst n=500),B,BFGS_Armijo,500,success,True,1,2,1,0,3,6e-06,0.0029323100025067106,0.0,0.0,0.0,
+B6_Broydn3D,BROYDN3D (CUTEst n=500),B,BFGS_Wolfe,500,success,True,1,2,1,0,3,6e-06,0.0019173449982190505,0.0,0.0,0.0,
+B6_Broydn3D,BROYDN3D (CUTEst n=500),B,Newton_BT,500,exception,False,0,0,1,1,2,,0.0005193990000407211,,,,"AssertionError: CUTEstProblem.hess: v must be specified for constrained problems. For the objective Hessian, use problem.ihess(x)"
+B6_Broydn3D,BROYDN3D (CUTEst n=1000),B,Cauchy_Point,1000,exception,False,0,1,1,1,3,,0.0006787259990232997,,,,"AssertionError: CUTEstProblem.hess: v must be specified for constrained problems. For the objective Hessian, use problem.ihess(x)"
+B6_Broydn3D,BROYDN3D (CUTEst n=1000),B,Dogleg,1000,exception,False,0,1,1,1,3,,0.00025761899451026693,,,,"AssertionError: CUTEstProblem.hess: v must be specified for constrained problems. For the objective Hessian, use problem.ihess(x)"
+B6_Broydn3D,BROYDN3D (CUTEst n=1000),B,Steihaug_CG,1000,exception,False,0,1,1,1,3,,0.0002505489974282682,,,,"AssertionError: CUTEstProblem.hess: v must be specified for constrained problems. For the objective Hessian, use problem.ihess(x)"
+B6_Broydn3D,BROYDN3D (CUTEst n=1000),B,BFGS_Armijo,1000,success,True,1,2,1,0,3,3e-06,0.00624823100224603,0.0,0.0,0.0,
+B6_Broydn3D,BROYDN3D (CUTEst n=1000),B,BFGS_Wolfe,1000,success,True,1,2,1,0,3,3e-06,0.002493801999662537,0.0,0.0,0.0,
+B6_Broydn3D,BROYDN3D (CUTEst n=1000),B,Newton_BT,1000,exception,False,0,0,1,1,2,,0.0029319750028662384,,,,"AssertionError: CUTEstProblem.hess: v must be specified for constrained problems. For the objective Hessian, use problem.ihess(x)"
+B7_BryBnd,BRYBND (CUTEst n=10),B,Cauchy_Point,10,max_iter_or_not_converged,False,1000,2001,1001,1000,4002,0.363818,0.06867237600090448,0.00016426124944738524,0.00016426124944738524,0.022449200858364885,
+B7_BryBnd,BRYBND (CUTEst n=10),B,Dogleg,10,success,True,11,23,12,12,47,0.004273,0.0012013680025120266,4.5915674662189575e-17,4.5915674662189575e-17,8.916708164438586e-08,
+B7_BryBnd,BRYBND (CUTEst n=10),B,Steihaug_CG,10,success,True,13,27,14,14,55,0.005,0.002061106999462936,4.742013949284839e-24,4.742013949284839e-24,2.8658572149023267e-11,
+B7_BryBnd,BRYBND (CUTEst n=10),B,BFGS_Armijo,10,success,True,118,428,235,0,663,0.060273,0.007201857995823957,5.5061527364990906e-15,5.5061527364990906e-15,5.418446008041998e-07,
+B7_BryBnd,BRYBND (CUTEst n=10),B,BFGS_Wolfe,10,success,True,63,238,287,0,525,0.047727,0.00492679700255394,0.0027981184034826054,0.0027981184034826054,3.6528273710365547e-07,
+B7_BryBnd,BRYBND (CUTEst n=10),B,Newton_BT,10,success,True,13,40,25,13,78,0.007091,0.0011096720045316033,1.7248181196880095e-23,1.7248181196880095e-23,5.4580016363718466e-11,
+B7_BryBnd,BRYBND (CUTEst n=50),B,Cauchy_Point,50,max_iter_or_not_converged,False,1000,2001,1001,1000,4002,0.078471,0.07170521900116,4.119002227346356e-10,4.119002227346356e-10,0.00010584732747307663,
+B7_BryBnd,BRYBND (CUTEst n=50),B,Dogleg,50,max_iter_or_not_converged,False,1000,2001,1001,1000,4002,0.078471,0.16895617200498236,2.1384574726523876e-16,2.1384574726523876e-16,1.1290602085326255e-06,
+B7_BryBnd,BRYBND (CUTEst n=50),B,Steihaug_CG,50,success,True,14,29,15,15,59,0.001157,0.0028497690000222065,1.4294081143830772e-17,1.4294081143830772e-17,2.3027665715943106e-08,
+B7_BryBnd,BRYBND (CUTEst n=50),B,BFGS_Armijo,50,success,True,115,628,229,0,857,0.016804,0.021822290000272915,9.44432062401023e-15,9.44432062401023e-15,8.099726440791382e-07,
+B7_BryBnd,BRYBND (CUTEst n=50),B,BFGS_Wolfe,50,success,True,119,577,797,0,1374,0.026941,0.029528182996727992,0.383282661099018,0.383282661099018,9.06935687659689e-07,
+B7_BryBnd,BRYBND (CUTEst n=50),B,Newton_BT,50,success,True,10,34,19,10,63,0.001235,0.0035489459987729788,2.7460744130967903e-15,2.7460744130967903e-15,3.005267871171351e-07,
+B7_BryBnd,BRYBND (CUTEst n=100),B,Cauchy_Point,100,max_iter_or_not_converged,False,1000,2001,1001,1000,4002,0.039624,0.14078655900084414,7.690493347682737e-11,7.690493347682737e-11,3.6215368355150545e-05,
+B7_BryBnd,BRYBND (CUTEst n=100),B,Dogleg,100,success,True,15,31,16,16,63,0.000624,0.005478189996210858,3.8896917868383434e-22,3.8896917868383434e-22,1.5617354201624643e-10,
+B7_BryBnd,BRYBND (CUTEst n=100),B,Steihaug_CG,100,success,True,16,33,17,17,67,0.000663,0.0038240299982135184,2.1527577169546947e-20,2.1527577169546947e-20,7.917738030236148e-10,
+B7_BryBnd,BRYBND (CUTEst n=100),B,BFGS_Armijo,100,success,True,162,888,323,0,1211,0.01199,0.049011593000614084,5.9482013555319996e-15,5.9482013555319996e-15,8.899185849262634e-07,
+B7_BryBnd,BRYBND (CUTEst n=100),B,BFGS_Wolfe,100,success,True,141,701,979,0,1680,0.016634,0.055869062001875136,5.118529657402855e-15,5.118529657402855e-15,7.066736503614192e-07,
+B7_BryBnd,BRYBND (CUTEst n=100),B,Newton_BT,100,success,True,11,34,21,11,66,0.000653,0.006054561999917496,1.519398093497986e-26,1.519398093497986e-26,4.590465060592785e-12,
+B7_BryBnd,BRYBND (CUTEst n=500),B,Cauchy_Point,500,max_iter_or_not_converged,False,1000,2001,1001,1000,4002,0.007988,1.2750851989985676,1.242913556172838e-10,1.242913556172838e-10,5.284634977663486e-05,
+B7_BryBnd,BRYBND (CUTEst n=500),B,Dogleg,500,success,True,14,29,15,15,59,0.000118,0.27563318600005005,2.9982590350609553e-22,2.9982590350609553e-22,2.2597821707422343e-09,
+B7_BryBnd,BRYBND (CUTEst n=500),B,Steihaug_CG,500,success,True,17,35,18,18,71,0.000142,0.04635355099890148,8.545631450846135e-19,8.545631450846135e-19,5.120582387005377e-09,
+B7_BryBnd,BRYBND (CUTEst n=500),B,BFGS_Armijo,500,success,True,321,1889,641,0,2530,0.00505,5.764076917002967,2.1167702321554608e-14,2.1167702321554608e-14,9.730348835828453e-07,
+B7_BryBnd,BRYBND (CUTEst n=500),B,BFGS_Wolfe,500,success,True,438,2060,2806,0,4866,0.009713,6.2100804560031975,2.1791030267903833e-14,2.1791030267903833e-14,9.937841614474519e-07,
+B7_BryBnd,BRYBND (CUTEst n=500),B,Newton_BT,500,success,True,12,43,23,12,78,0.000156,0.29146638999372954,3.558944645890498e-21,3.558944645890498e-21,4.771696376030643e-10,
+B7_BryBnd,BRYBND (CUTEst n=1000),B,Cauchy_Point,1000,success,True,783,1567,784,784,3135,0.003132,15.440634683000098,6.843592696543018e-14,6.843592696543018e-14,9.944959438944543e-07,
+B7_BryBnd,BRYBND (CUTEst n=1000),B,Dogleg,1000,success,True,667,1335,668,668,2671,0.002668,40.69159141199634,1.1068810435042823e-16,1.1068810435042823e-16,6.858025837858273e-08,
+B7_BryBnd,BRYBND (CUTEst n=1000),B,Steihaug_CG,1000,success,True,20,41,21,21,83,8.3e-05,0.6694202989965561,1.5831852958239305e-19,1.5831852958239305e-19,1.8879708425898393e-09,
+B7_BryBnd,BRYBND (CUTEst n=1000),B,BFGS_Armijo,1000,success,True,463,2783,925,0,3708,0.003704,65.71967826900072,2.491661125214327e-14,2.491661125214327e-14,9.832290421306197e-07,
+B7_BryBnd,BRYBND (CUTEst n=1000),B,BFGS_Wolfe,1000,success,True,310,1384,1838,0,3222,0.003219,34.47422003900283,1.408866934395341e-14,1.408866934395341e-14,9.968988718516353e-07,
+B7_BryBnd,BRYBND (CUTEst n=1000),B,Newton_BT,1000,success,True,12,40,23,12,75,7.5e-05,4.953618737999932,2.1898173556028018e-27,2.1898173556028018e-27,1.0568796960788727e-11,
+B8_ChainWoo,CHAINWOO,B,Cauchy_Point,8,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 8
+B8_ChainWoo,CHAINWOO,B,Dogleg,8,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 8
+B8_ChainWoo,CHAINWOO,B,Steihaug_CG,8,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 8
+B8_ChainWoo,CHAINWOO,B,BFGS_Armijo,8,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 8
+B8_ChainWoo,CHAINWOO,B,BFGS_Wolfe,8,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 8
+B8_ChainWoo,CHAINWOO,B,Newton_BT,8,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 8
+B8_ChainWoo,CHAINWOO,B,Cauchy_Point,48,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 48
+B8_ChainWoo,CHAINWOO,B,Dogleg,48,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 48
+B8_ChainWoo,CHAINWOO,B,Steihaug_CG,48,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 48
+B8_ChainWoo,CHAINWOO,B,BFGS_Armijo,48,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 48
+B8_ChainWoo,CHAINWOO,B,BFGS_Wolfe,48,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 48
+B8_ChainWoo,CHAINWOO,B,Newton_BT,48,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 48
+B8_ChainWoo,CHAINWOO,B,Cauchy_Point,100,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 100
+B8_ChainWoo,CHAINWOO,B,Dogleg,100,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 100
+B8_ChainWoo,CHAINWOO,B,Steihaug_CG,100,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 100
+B8_ChainWoo,CHAINWOO,B,BFGS_Armijo,100,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 100
+B8_ChainWoo,CHAINWOO,B,BFGS_Wolfe,100,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 100
+B8_ChainWoo,CHAINWOO,B,Newton_BT,100,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 100
+B8_ChainWoo,CHAINWOO,B,Cauchy_Point,500,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 500
+B8_ChainWoo,CHAINWOO,B,Dogleg,500,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 500
+B8_ChainWoo,CHAINWOO,B,Steihaug_CG,500,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 500
+B8_ChainWoo,CHAINWOO,B,BFGS_Armijo,500,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 500
+B8_ChainWoo,CHAINWOO,B,BFGS_Wolfe,500,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 500
+B8_ChainWoo,CHAINWOO,B,Newton_BT,500,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 500
+B8_ChainWoo,CHAINWOO,B,Cauchy_Point,1000,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 1000
+B8_ChainWoo,CHAINWOO,B,Dogleg,1000,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 1000
+B8_ChainWoo,CHAINWOO,B,Steihaug_CG,1000,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 1000
+B8_ChainWoo,CHAINWOO,B,BFGS_Armijo,1000,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 1000
+B8_ChainWoo,CHAINWOO,B,BFGS_Wolfe,1000,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 1000
+B8_ChainWoo,CHAINWOO,B,Newton_BT,1000,import_error,False,0,0,0,0,0,,0.0,,,,SIFDECODE error:  Failed to set N to 1000
