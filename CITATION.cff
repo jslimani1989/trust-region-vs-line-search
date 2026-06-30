@@ -17,16 +17,16 @@ abstract: >
   and a LaTeX article skeleton.
 
 authors:
-  - family-names: "TODO"
-    given-names: "TODO"
+  - family-names: "Slimani"
+    given-names: "Jabrane"
     affiliation: >
       Institut National de Statistique et d'Économie Appliquée (INSEA),
       Rabat, Morocco
-    email: "TODO@insea.ac.ma"
-    orcid: "https://orcid.org/TODO"
+    email: "jslimani@insea.ac.ma"
+    orcid: "https://orcid.org/0000-0002-3001-103X"
 
-repository-code: "https://github.com/TODO/trust-region-vs-line-search"
-url: "https://github.com/TODO/trust-region-vs-line-search"
+repository-code: "https://github.com/jslimani1989/trust-region-vs-line-search"
+url: "https://github.com/jslimani1989/trust-region-vs-line-search"
 license: MIT
 
 keywords:
