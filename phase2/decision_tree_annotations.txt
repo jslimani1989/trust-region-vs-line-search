@@ -1,5 +1,5 @@
-Decision Tree Annotations — §6
-Source: wilcoxon_tests.py (B28), protocol PROTOCOL_G7_WILCOXON.md
+﻿Decision Tree Annotations — §6
+Source: wilcoxon_tests.py
 ============================================================
 
 Node 1 — Is ∇²f available? (Second-order methods)

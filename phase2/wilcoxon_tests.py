@@ -1,11 +1,11 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-wilcoxon_tests.py — Tests statistiques G7 (B28)
+wilcoxon_tests.py — Tests statistiques G7 ()
 ================================================
 Wilcoxon signed-rank pairé + correction Holm–Bonferroni.
 3 familles séparées (Cat. A, B, C). 8 paires ciblées par défaut.
 
-Protocole : PROTOCOL_G7_WILCOXON.md (verrouillé B27)
+Protocole : PROTOCOL_G7_WILCOXON.md (verrouillé )
 Source    : resultats_benchmark.csv
 Sorties   :
   wilcoxon_results.csv          — résultats détaillés
@@ -350,7 +350,7 @@ def write_tree_annotations(results: pd.DataFrame, path: str) -> None:
 
     lines = []
     lines.append("Decision Tree Annotations — §6")
-    lines.append("Source: wilcoxon_tests.py (B28), protocol PROTOCOL_G7_WILCOXON.md")
+    lines.append("Source: wilcoxon_tests.py")
     lines.append("=" * 60)
 
     lines.append("\nNode 1 — Is ∇²f available? (Second-order methods)")
@@ -467,3 +467,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

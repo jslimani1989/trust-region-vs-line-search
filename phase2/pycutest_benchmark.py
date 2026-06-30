@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-pycutest_benchmark.py — B32
+pycutest_benchmark.py — 
 ============================
 Validation CUTEst : 6 problèmes Tier 1 × 6 solveurs × n variables.
 Réutilise run_one() du framework — cohérence totale avec resultats_benchmark.csv.
@@ -14,7 +14,7 @@ Usage :
   python pycutest_benchmark.py --bench resultats_benchmark.csv
   python pycutest_benchmark.py --skip-audit   (si benchmark indisponible)
 
-Plan migration : PLAN_MIGRATION_PYCUTEST.md (B30)
+Migration plan : pycutest/CUTEst Tier 1 problems
 """
 
 import sys
@@ -207,7 +207,7 @@ def run_audit(df_cutest: pd.DataFrame,
               bench_path: str) -> pd.DataFrame:
     """Compare les taux de convergence CUTEst vs benchmark Phase 1.
 
-    Seuils (SPEC B30 §3) :
+    Seuils (SPEC  §3) :
       OK       : |delta| ≤ 5 pp
       WARN     : 5 < |delta| ≤ 15 pp
       CRITICAL : |delta| > 15 pp
@@ -284,7 +284,7 @@ def print_summary(df_cutest: pd.DataFrame,
 # ══════════════════════════════════════════════════════════════════════════════
 
 def main():
-    parser = argparse.ArgumentParser(description="pycutest benchmark — B32")
+    parser = argparse.ArgumentParser(description="pycutest benchmark — ")
     parser.add_argument("--bench",       default="resultats_benchmark.csv",
                         help="Fichier benchmark Phase 1")
     parser.add_argument("--out-cutest",  default="results_cutest.csv")
@@ -296,7 +296,7 @@ def main():
 
     verbose = not args.quiet
     print("=" * 65)
-    print("B32 — pycutest benchmark Tier 1")
+    print(" — pycutest benchmark Tier 1")
     print(f"Problèmes : {len(TIER1)}  |  Méthodes : {len(METHOD_NAMES)}")
     print("=" * 65)
 
@@ -319,3 +319,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

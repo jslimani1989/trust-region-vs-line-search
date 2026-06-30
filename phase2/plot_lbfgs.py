@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-plot_lbfgs.py — Figure §5 (B25)
+plot_lbfgs.py — Figure §5 ()
 =================================
 Panneau gauche  : N_tot vs n  à κ=1e4  (5 courbes : Steihaug-CG, BFGS-Wolfe depuis A07
                                           + L-BFGS-{5,10,20} médiane 20 seeds)
@@ -8,7 +8,7 @@ Panneau droit   : Taux convergence vs κ à n=100 (L-BFGS-{5,10,20} uniquement �
                   quadratiques rotées SPEC_G4, non comparables au benchmark diagonal)
 
 Sources :
-  results_lbfgs.csv       — B24 (L-BFGS expérience G4)
+  results_lbfgs.csv       —  (L-BFGS expérience G4)
   resultats_benchmark.csv — Phase 1 (Steihaug_CG, BFGS_Wolfe sur A07)
 
 Sortie : figure_lbfgs_S5.pdf  +  figure_lbfgs_S5.png
@@ -29,7 +29,7 @@ BENCH_CSV    = "resultats_benchmark.csv"
 OUT_PDF      = "figure_lbfgs_S5.pdf"
 OUT_PNG      = "figure_lbfgs_S5.png"
 
-# ── Palette (cohérente avec article conférence) ───────────────────────────────
+# ── Palette (cohérente avec reference design) ───────────────────────────────
 COLORS = {
     "Steihaug_CG": "#1F77B4",    # bleu
     "BFGS_Wolfe":  "#FF7F0E",    # orange
@@ -333,3 +333,4 @@ if __name__ == "__main__":
     lbfgs_path = sys.argv[1] if len(sys.argv) > 1 else LBFGS_CSV
     bench_path = sys.argv[2] if len(sys.argv) > 2 else BENCH_CSV
     make_figure(lbfgs_path, bench_path)
+

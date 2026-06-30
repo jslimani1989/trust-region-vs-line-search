@@ -1,12 +1,12 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 lbfgs_wrapper.py — L-BFGS (m in {5, 10, 20}) pour Gap G4
 ==========================================================
 Two-loop recursion NW06 Alg. 7.4 + strong_wolfe existante (L3 Option A).
 Standalone : ne dépend que de implementation_methode_lineaires.py et NumPy/pandas.
 
-Blocs  : B23 (code) -> B24 (exécution) -> B25 (plot_lbfgs.py)
-Spec   : SPEC_G4_LBFGS.md (verrouillée B22-06-23)
+Blocs  :  (code) ->  (exécution) ->  (plot_lbfgs.py)
+Spec   : SPEC_G4_LBFGS.md (verrouillée -06-23)
 Sortie : results_lbfgs.csv (schéma §8 SPEC)
 """
 
@@ -401,7 +401,7 @@ def run_g4(output_path: str = "results_lbfgs.csv",
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("G4 — L-BFGS Experiment  (SPEC_G4_LBFGS, bloc B23/B24)")
+    print("G4 — L-BFGS Experiment  (SPEC_G4_LBFGS, bloc /)")
     print("=" * 60)
 
     print("\n[1/2] Sanity check ...")
@@ -409,3 +409,4 @@ if __name__ == "__main__":
 
     print("\n[2/2] Expérience G4 ...")
     run_g4("results_lbfgs.csv", verbose=True)
+
