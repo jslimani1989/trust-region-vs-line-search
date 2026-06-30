@@ -1,11 +1,11 @@
-﻿Decision Tree Annotations — §6
+Decision Tree Annotations — §6
 Source: wilcoxon_tests.py
 ============================================================
 
 Node 1 — Is ∇²f available? (Second-order methods)
   Tests bearing on this node: P2 (TR), P5 (LS)
   P2 Steihaug-CG vs Dogleg    : A=★★ (A>B)  B=ns (=)  C=ns (=)
-  P5 Steihaug-CG vs Newton-BT : A=★★ (A>B)  B=ns (A>B)  C=ns (A<B)
+  P5 Steihaug-CG vs Newton-BT : A=★★ (A>B)  B=★ (A>B)  C=★★ (A<B)
   → Steihaug-CG significantly better on Cat.: ['A', 'B']
 
 Node 2 — n ≥ 500? (Scalability branch)
@@ -16,13 +16,13 @@ Node 2 — n ≥ 500? (Scalability branch)
 
 Node 3 — H possibly indefinite? (Non-convex branch)
   Tests bearing on this node: P5, P8
-  P5 Steihaug-CG vs Newton-BT : C=ns (A<B)
+  P5 Steihaug-CG vs Newton-BT : C=★★ (A<B)
   P8 BFGS-Wolfe vs Newton-BT  : C=ns (A>B)
-  → Newton-BT significantly worse on Cat. C: No
+  → Newton-BT significantly worse on Cat. C: Yes
 
 Node 4 — Saddle-type geometry? (Cat. C sub-branch)
   Central claim: Steihaug-CG dominates on C01/C08/C09/C10
-  P5 on Cat. C: ns (A<B)
+  P5 on Cat. C: ★★ (A<B)
   P2 on Cat. C: ns (=)
   → Empirical support for decision-tree leaf:
     'If saddle-type → Steihaug-CG'
@@ -30,5 +30,5 @@ Node 4 — Saddle-type geometry? (Cat. C sub-branch)
 ============================================================
 Intra-family comparisons (supporting evidence)
   P6 Dogleg vs Cauchy-Point: A=★★ (A<B)  B=★★ (=)  C=ns (=)
-  P7 BFGS-Wolfe vs BFGS-Armijo: A=★ (A<B)  B=★ (A>B)  C=ns (A<B)
+  P7 BFGS-Wolfe vs BFGS-Armijo: A=★ (A<B)  B=★★ (A>B)  C=ns (A<B)
   P8 BFGS-Wolfe vs Newton-BT: A=★★ (A>B)  B=★★ (A>B)  C=ns (A>B)
