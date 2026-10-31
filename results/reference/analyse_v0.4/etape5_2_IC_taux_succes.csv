@@ -1,0 +1,25 @@
+method,scope,n_problemes,taux_succes_moyen_par_probleme,IC95_bas,IC95_haut,note
+Cauchy_Point,global,36,0.4056,0.2667,0.5556,
+Cauchy_Point,A,15,0.1733,0.0533,0.44,approximatif (10 a 15 grappes)
+Cauchy_Point,B,11,0.6182,0.3273,0.8182,approximatif (10 a 15 grappes)
+Cauchy_Point,C,10,0.52,0.22,0.78,approximatif (10 a 15 grappes)
+Dogleg,global,36,0.8667,0.7389,0.9333,
+Dogleg,A,15,0.8933,0.5867,0.96,approximatif (10 a 15 grappes)
+Dogleg,B,11,0.8182,0.5708,0.9273,approximatif (10 a 15 grappes)
+Dogleg,C,10,0.88,0.46,0.98,approximatif (10 a 15 grappes)
+Steihaug_CG,global,36,0.9056,0.8389,0.9444,
+Steihaug_CG,A,15,0.8933,0.7467,0.9467,approximatif (10 a 15 grappes)
+Steihaug_CG,B,11,0.8909,0.7636,0.9636,approximatif (10 a 15 grappes)
+Steihaug_CG,C,10,0.94,0.84,0.98,approximatif (10 a 15 grappes)
+BFGS_Armijo,global,36,0.7556,0.6611,0.8278,
+BFGS_Armijo,A,15,0.76,0.6,0.8667,approximatif (10 a 15 grappes)
+BFGS_Armijo,B,11,0.7636,0.6182,0.8727,approximatif (10 a 15 grappes)
+BFGS_Armijo,C,10,0.74,0.52,0.86,approximatif (10 a 15 grappes)
+BFGS_Wolfe,global,36,0.6889,0.5667,0.7889,
+BFGS_Wolfe,A,15,0.7867,0.6133,0.8933,approximatif (10 a 15 grappes)
+BFGS_Wolfe,B,11,0.7636,0.6182,0.8909,approximatif (10 a 15 grappes)
+BFGS_Wolfe,C,10,0.46,0.2,0.68,approximatif (10 a 15 grappes)
+Newton_BT,global,36,0.9778,0.9278,0.9944,
+Newton_BT,A,15,0.9733,0.84,1.0,approximatif (10 a 15 grappes)
+Newton_BT,B,11,0.9636,0.8727,0.9818,approximatif (10 a 15 grappes)
+Newton_BT,C,10,1.0,1.0,1.0,approximatif (10 a 15 grappes)

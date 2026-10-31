@@ -1,0 +1,4 @@
+method,n_iter,n_total_Ntot,status,code_version
+Steihaug_CG,85,343,success,v0.2
+BFGS_Wolfe,105,1350,success,v0.3
+Newton_BT,26,159,success,v0.2

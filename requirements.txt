@@ -1,0 +1,4 @@
+numpy>=1.24
+scipy>=1.18.0
+matplotlib>=3.7
+# Versions utilisees pour les resultats v0.5 (Python 3.13.13) : numpy 2.4.6, scipy 1.18.0

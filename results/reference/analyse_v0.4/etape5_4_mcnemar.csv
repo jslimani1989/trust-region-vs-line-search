@@ -1,0 +1,16 @@
+solveur_a,solveur_b,n01_b_seul,n10_a_seul,n_discordant,p_exact_McNemar,note,p_holm
+Cauchy_Point,Dogleg,75,0,75,5.293955920339377e-23,"suppose les 156 instances independantes (approximation, cf. R3.11/D6)",7.411538288475128e-22
+Cauchy_Point,Steihaug_CG,74,0,74,1.0587911840678754e-22,"suppose les 156 instances independantes (approximation, cf. R3.11/D6)",1.376428539288238e-21
+Cauchy_Point,BFGS_Armijo,56,9,65,2.049245302203524e-09,"suppose les 156 instances independantes (approximation, cf. R3.11/D6)",2.049245302203524e-08
+Cauchy_Point,BFGS_Wolfe,53,14,67,1.7728678775519788e-06,"suppose les 156 instances independantes (approximation, cf. R3.11/D6)",1.2410075142863851e-05
+Cauchy_Point,Newton_BT,88,1,89,2.908056841006738e-25,"suppose les 156 instances independantes (approximation, cf. R3.11/D6)",4.362085261510107e-24
+Dogleg,Steihaug_CG,8,9,17,1.0,"suppose les 156 instances independantes (approximation, cf. R3.11/D6)",1.0
+Dogleg,BFGS_Armijo,8,36,44,2.5448598648836196e-05,"suppose les 156 instances independantes (approximation, cf. R3.11/D6)",0.00015269159189301718
+Dogleg,BFGS_Wolfe,8,44,52,4.0393217393130953e-07,"suppose les 156 instances independantes (approximation, cf. R3.11/D6)",3.2314573914504763e-06
+Dogleg,Newton_BT,13,1,14,0.0018310546875,"suppose les 156 instances independantes (approximation, cf. R3.11/D6)",0.0054931640625
+Steihaug_CG,BFGS_Armijo,8,35,43,4.1934157934520044e-05,"suppose les 156 instances independantes (approximation, cf. R3.11/D6)",0.00020967078967260022
+Steihaug_CG,BFGS_Wolfe,5,40,45,7.878384167270269e-08,"suppose les 156 instances independantes (approximation, cf. R3.11/D6)",7.090545750543242e-07
+Steihaug_CG,Newton_BT,14,1,15,0.0009765625,"suppose les 156 instances independantes (approximation, cf. R3.11/D6)",0.00390625
+BFGS_Armijo,BFGS_Wolfe,6,14,20,0.11531829833984375,"suppose les 156 instances independantes (approximation, cf. R3.11/D6)",0.2306365966796875
+BFGS_Armijo,Newton_BT,41,1,42,1.9554136088117957e-11,"suppose les 156 instances independantes (approximation, cf. R3.11/D6)",2.1509549696929753e-10
+BFGS_Wolfe,Newton_BT,49,1,50,9.059419880941277e-14,"suppose les 156 instances independantes (approximation, cf. R3.11/D6)",1.0871303857129533e-12

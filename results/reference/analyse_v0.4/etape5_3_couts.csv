@@ -1,0 +1,61 @@
+scope,solveur_a,solveur_b,n_problemes_utilises,n_instances_utilisees,ratio_geo_moyen,IC95_bas,IC95_haut,note
+global,Cauchy_Point,Dogleg,21,65,6.4526,3.1375,14.6132,
+global,Cauchy_Point,Steihaug_CG,21,65,4.9266,2.5992,10.1914,
+global,Cauchy_Point,BFGS_Armijo,21,56,2.6369,1.221,6.062,
+global,Cauchy_Point,BFGS_Wolfe,20,51,3.6757,1.7328,7.9925,
+global,Cauchy_Point,Newton_BT,21,64,6.8749,3.1663,15.6323,
+global,Dogleg,Steihaug_CG,34,131,0.7357,0.6005,0.912,
+global,Dogleg,BFGS_Armijo,33,104,0.236,0.1362,0.4176,
+global,Dogleg,BFGS_Wolfe,31,96,0.3345,0.2147,0.5271,
+global,Dogleg,Newton_BT,34,139,1.3037,1.0742,1.6306,
+global,Steihaug_CG,BFGS_Armijo,36,104,0.3662,0.2484,0.5643,
+global,Steihaug_CG,BFGS_Wolfe,33,99,0.5077,0.3616,0.7185,
+global,Steihaug_CG,Newton_BT,36,138,1.7305,1.3796,2.0669,
+global,BFGS_Armijo,BFGS_Wolfe,33,98,1.2789,1.1012,1.5623,
+global,BFGS_Armijo,Newton_BT,36,111,4.7519,2.9319,7.8207,
+global,BFGS_Wolfe,Newton_BT,33,103,3.5484,2.3762,5.2797,
+A,Cauchy_Point,Dogleg,5,9,66.1743,26.2561,114.9351,approximatif (10 a 15 grappes)
+A,Cauchy_Point,Steihaug_CG,5,9,31.9753,8.4991,55.1637,approximatif (10 a 15 grappes)
+A,Cauchy_Point,BFGS_Armijo,5,9,13.6365,2.8833,38.4737,approximatif (10 a 15 grappes)
+A,Cauchy_Point,BFGS_Wolfe,5,9,21.9024,4.6907,45.3571,approximatif (10 a 15 grappes)
+A,Cauchy_Point,Newton_BT,5,9,68.9057,31.668,119.4514,approximatif (10 a 15 grappes)
+A,Dogleg,Steihaug_CG,14,49,0.4709,0.3613,0.6045,approximatif (10 a 15 grappes)
+A,Dogleg,BFGS_Armijo,14,39,0.0949,0.0459,0.2146,approximatif (10 a 15 grappes)
+A,Dogleg,BFGS_Wolfe,14,41,0.1766,0.1055,0.3105,approximatif (10 a 15 grappes)
+A,Dogleg,Newton_BT,14,55,1.1252,1.0134,1.3515,approximatif (10 a 15 grappes)
+A,Steihaug_CG,BFGS_Armijo,15,37,0.2629,0.146,0.5074,approximatif (10 a 15 grappes)
+A,Steihaug_CG,BFGS_Wolfe,15,41,0.4303,0.2639,0.6922,approximatif (10 a 15 grappes)
+A,Steihaug_CG,Newton_BT,15,51,2.4014,1.8129,3.0639,approximatif (10 a 15 grappes)
+A,BFGS_Armijo,BFGS_Wolfe,15,38,1.6128,1.2208,2.2448,approximatif (10 a 15 grappes)
+A,BFGS_Armijo,Newton_BT,15,41,9.6824,4.2555,20.2249,approximatif (10 a 15 grappes)
+A,BFGS_Wolfe,Newton_BT,15,43,5.5428,3.0652,9.6439,approximatif (10 a 15 grappes)
+B,Cauchy_Point,Dogleg,9,34,4.7102,1.8528,14.2334,approximatif (10 a 15 grappes)
+B,Cauchy_Point,Steihaug_CG,9,34,3.9118,1.6595,10.9845,approximatif (10 a 15 grappes)
+B,Cauchy_Point,BFGS_Armijo,9,30,2.9701,1.1361,9.2999,approximatif (10 a 15 grappes)
+B,Cauchy_Point,BFGS_Wolfe,9,29,3.116,1.2303,8.0604,approximatif (10 a 15 grappes)
+B,Cauchy_Point,Newton_BT,9,33,5.5487,2.2171,15.4814,approximatif (10 a 15 grappes)
+B,Dogleg,Steihaug_CG,11,44,0.8841,0.6999,1.3082,approximatif (10 a 15 grappes)
+B,Dogleg,BFGS_Armijo,10,37,0.6698,0.2079,1.73,approximatif (10 a 15 grappes)
+B,Dogleg,BFGS_Wolfe,10,36,0.6818,0.2412,1.5395,approximatif (10 a 15 grappes)
+B,Dogleg,Newton_BT,11,44,1.4179,1.113,2.7156,approximatif (10 a 15 grappes)
+B,Steihaug_CG,BFGS_Armijo,11,39,0.6877,0.2883,1.5087,approximatif (10 a 15 grappes)
+B,Steihaug_CG,BFGS_Wolfe,11,39,0.693,0.3271,1.3334,approximatif (10 a 15 grappes)
+B,Steihaug_CG,Newton_BT,11,48,1.6124,1.2951,1.9563,approximatif (10 a 15 grappes)
+B,BFGS_Armijo,BFGS_Wolfe,11,41,0.9926,0.7866,1.1947,approximatif (10 a 15 grappes)
+B,BFGS_Armijo,Newton_BT,11,41,2.2756,0.957,5.6687,approximatif (10 a 15 grappes)
+B,BFGS_Wolfe,Newton_BT,11,41,2.2778,1.0769,5.126,approximatif (10 a 15 grappes)
+C,Cauchy_Point,Dogleg,7,22,1.8339,1.1752,4.7069,approximatif (10 a 15 grappes)
+C,Cauchy_Point,Steihaug_CG,7,22,1.7424,1.1575,4.1082,approximatif (10 a 15 grappes)
+C,Cauchy_Point,BFGS_Armijo,7,17,0.6997,0.275,1.9529,approximatif (10 a 15 grappes)
+C,Cauchy_Point,BFGS_Wolfe,6,13,1.0641,0.4243,2.887,approximatif (10 a 15 grappes)
+C,Cauchy_Point,Newton_BT,7,22,1.7456,0.6793,3.9701,approximatif (10 a 15 grappes)
+C,Dogleg,Steihaug_CG,9,38,1.1762,0.9653,1.754,approximatif (10 a 15 grappes)
+C,Dogleg,BFGS_Armijo,9,28,0.3055,0.1905,0.4977,approximatif (10 a 15 grappes)
+C,Dogleg,BFGS_Wolfe,7,19,0.4335,0.283,0.7112,approximatif (10 a 15 grappes)
+C,Dogleg,Newton_BT,9,40,1.4794,0.7503,2.4611,approximatif (10 a 15 grappes)
+C,Steihaug_CG,BFGS_Armijo,10,28,0.301,0.1925,0.4767,approximatif (10 a 15 grappes)
+C,Steihaug_CG,BFGS_Wolfe,7,19,0.4438,0.2957,0.7406,approximatif (10 a 15 grappes)
+C,Steihaug_CG,Newton_BT,10,39,1.1443,0.6198,1.5483,approximatif (10 a 15 grappes)
+C,BFGS_Armijo,BFGS_Wolfe,7,19,1.1585,1.0656,1.199,approximatif (10 a 15 grappes)
+C,BFGS_Armijo,Newton_BT,10,29,3.6723,2.4136,6.5855,approximatif (10 a 15 grappes)
+C,BFGS_Wolfe,Newton_BT,7,19,2.7384,1.8138,4.0767,approximatif (10 a 15 grappes)

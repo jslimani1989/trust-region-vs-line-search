@@ -1,0 +1,11 @@
+{
+  "commit": "2d359ae7f8fc9abfa907326c2ba269ca06c8495d",
+  "tag": "v0.5",
+  "empreinte_code": {
+    "framework_united_final.py": "3d5ec1ae70dc6d6530cab903c0d2d51d7ad16770",
+    "trust_region.py": "fe54a86e1c80c6b6950b0487d34d0bb6acb990c4",
+    "implementation_methode_lineaires.py": "c1266dc06a969c56dfd522aef115ac0068d95203",
+    "benchmark_all_categories_no_levy_validation.py": "ea7d94f7fd114af3bb180222f108f7fee293539c"
+  },
+  "debut": "2026-10-11 14:21:29"
+}

@@ -1,0 +1,4 @@
+method,n_iter,n_total_Ntot_v03,n_total_Ntot_v04,status,ratio_v03_sur_v04
+Steihaug_CG,85,343,236,success,1.4534
+BFGS_Wolfe,105,1350,332,success,4.0663
+Newton_BT,26,159,83,success,1.9157

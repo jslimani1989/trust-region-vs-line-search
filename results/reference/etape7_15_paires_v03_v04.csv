@@ -1,0 +1,16 @@
+solveur_a,solveur_b,ratio_geo_moyen_v03,ratio_geo_moyen_v04,IC95_bas_v04,IC95_haut_v04,n_problemes_utilises,n_instances_utilisees,change_de_cote_de_1
+Cauchy_Point,Dogleg,6.5088,6.4526,3.1047,14.5427,21,65,False
+Cauchy_Point,Steihaug_CG,4.9066,4.9266,2.6264,9.9614,21,65,False
+Cauchy_Point,BFGS_Armijo,1.8483,2.6369,1.2297,6.0139,21,56,False
+Cauchy_Point,BFGS_Wolfe,2.0041,3.6757,1.764,7.9892,20,51,False
+Cauchy_Point,Newton_BT,5.1039,6.8749,3.1426,15.5085,21,64,False
+Dogleg,Steihaug_CG,0.7232,0.7357,0.6008,0.9014,34,131,False
+Dogleg,BFGS_Armijo,0.1742,0.236,0.1365,0.4062,33,104,False
+Dogleg,BFGS_Wolfe,0.1677,0.3345,0.2107,0.523,31,96,False
+Dogleg,Newton_BT,0.9419,1.3037,1.0809,1.637,34,139,True
+Steihaug_CG,BFGS_Armijo,0.2743,0.3662,0.2465,0.5586,36,104,False
+Steihaug_CG,BFGS_Wolfe,0.2578,0.5077,0.3633,0.719,33,99,False
+Steihaug_CG,Newton_BT,1.2715,1.7305,1.3765,2.06,36,138,False
+BFGS_Armijo,BFGS_Wolfe,0.8743,1.2789,1.0988,1.5439,33,98,True
+BFGS_Armijo,Newton_BT,4.662,4.7519,2.9673,7.795,36,111,False
+BFGS_Wolfe,Newton_BT,5.1574,3.5484,2.3821,5.3091,33,103,False
